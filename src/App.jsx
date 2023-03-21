@@ -2,9 +2,14 @@ import { useState } from 'react'
 import CustomForm from './components/CustomForm'
 import TaskList from './components/TaskList';
 import EditTask from './components/EditTask';
+// 
+// custom hooks
+// 
+import useLocalStorage from './hooks/useLocalStorage';
 
 function App() {
-  const [tasks, setTasks] = useState([]);
+  // const [tasks, setTasks] = useState([]);
+  const [tasks, setTasks] = useLocalStorage('react-todo', []);
 
   const [editingMode, setEditingMode] = useState(false);
   const [editiedTask, setEditiedTask] = useState(null);
